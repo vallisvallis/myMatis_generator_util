@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE generatorConfiguration PUBLIC  
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"  
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">  
+  
+<generatorConfiguration>  
+    <classPathEntry  
+            location="F:\maven\LocalRepository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar"/>  
+    <context id="testTables" targetRuntime="MyBatis3">  
+        <commentGenerator>  
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->  
+            <property name="suppressAllComments" value="true"/>  
+        </commentGenerator>  
+        <!--数据库连接的信息：驱动类、连接地址、用户名、密码 -->  
+        <!--<jdbcConnection driverClass="${jdbc.driver}"--> <!--connectionURL="${jdbc.url}"--> <!--userId="${jdbc.username}"--> <!--password="${jdbc.password}">--> <!--</jdbcConnection>-->  
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"  
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/hxsite?characterEncoding=UTF-8" userId="root"  
+                        password="root">  
+        </jdbcConnection>  
+        <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer，为 true时把JDBC DECIMAL 和 NUMERIC 类型解析为java.math.BigDecimal -->  
+        <javaTypeResolver>  
+            <property name="forceBigDecimals" value="false"/>  
+        </javaTypeResolver>  
+        <!-- targetProject:生成PO类的位置 -->  
+        <javaModelGenerator targetPackage="com.mengmaclub.model"  
+                            targetProject="src\main\java">  
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->  
+            <property name="enableSubPackages" value="false"/>  
+            <!-- 从数据库返回的值被清理前后的空格 -->  
+            <property name="trimStrings" value="true"/>  
+        </javaModelGenerator>  
+        <!-- targetProject:mapper映射文件生成的位置 -->  
+        <sqlMapGenerator targetPackage="com.mengmaclub.mapper"  
+                         targetProject="src\main\java">  
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->  
+            <property name="enableSubPackages" value="false"/>  
+        </sqlMapGenerator>  
+        <!-- targetPackage：mapper接口生成的位置 -->  
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.mengmaclub.mapper"  
+                             targetProject="src\main\java">  
+            <!-- enableSubPackages:是否让schema作为包的后缀 -->  
+            <property name="enableSubPackages" value="false"/>  
+        </javaClientGenerator>  
+        <!-- 指定数据库表 -->  
+        <!-- 1.会员 
+        <table tableName="hx_people"  
+         domainObjectName="HxPeople"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        >
+        </table>-->
+        <!-- 2.会员单位 
+         <table tableName="hx_team"  
+         domainObjectName="HxTeam"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>  -->  
+        <!--3.驾照考试 
+         <table tableName="exam"  
+         domainObjectName="Exam"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>   -->
+        <!-- 4.比赛项目 
+         <table tableName="match_list"  
+         domainObjectName="MatchList"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>  -->
+            <!-- 4.比赛报名单
+         <table tableName="join_match_team"  
+         domainObjectName="JoinMatchTeam"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>   -->
+           <!-- 4.比赛报名人
+         <table tableName="join_match_team_people"  
+         domainObjectName="JoinMatchTeamPeople"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>    -->
+         <!-- 4.比赛组别 
+         <table tableName="match_group"  
+         domainObjectName="MatchGroup"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>   -->
+             <!-- 4.比赛职务 
+         <table tableName="match_job"  
+         domainObjectName="MatchJob"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>  -->
+            <!-- 4.isNo 
+         <table tableName="isNo"  
+         domainObjectName="IsNo"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>-->
+        <!-- 5.费用
+         <table tableName="fee"  
+         domainObjectName="Fee"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>   -->
+        <!--6. 费用类型 
+         <table tableName="fee_type"  
+         domainObjectName="FeeType"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>  -->
+        <!-- 7.航协 
+         <table tableName="hx"  
+         domainObjectName="Hx"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table> -->
+        <!-- 费用状态
+         <table tableName="hx_fee_status"  
+         domainObjectName="HxFeeStatus"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>    -->
+        <!-- 8.管理者 
+         <table tableName="manager"  
+         domainObjectName="Manager"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>  -->
+        <!-- 9.赛事 
+         <table tableName="match"  
+         domainObjectName="Match"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>  -->
+        <!--10. 新闻 
+         <table tableName="news"  
+         domainObjectName="News"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>  -->
+        <!-- 会员单位类型 
+         <table tableName="org_type"  
+         domainObjectName="OrgType"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table> --> 
+        <!-- 11.裁判  
+         <table tableName="referee"  
+         domainObjectName="Referee"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table> -->
+        
+          
+         <table tableName="examination_paper"  
+         domainObjectName="Examination_paper"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>
+        
+        <!--公告
+         <table tableName="report"  
+         domainObjectName="Report"
+         enableCountByExample="false"
+         enableDeleteByExample="false"
+         enableSelectByExample="false"
+         enableUpdateByExample="false"
+         selectByExampleQueryId="false"
+        ></table>  --> 
+        <!-- 有些表的字段需要指定java类型  
+        <table schema="" tableName="">  
+            <columnOverride column="" javaType="" />  
+        </table>  
+        -->  
+    </context>  
+</generatorConfiguration> 
